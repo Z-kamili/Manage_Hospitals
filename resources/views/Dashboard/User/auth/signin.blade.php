@@ -32,19 +32,29 @@
 										<div class="mb-5 d-flex"> <a href="{{ url('/' . $page='index') }}"><img src="{{URL::asset('Dashboard/img/brand/favicon.png')}}" class="sign-favicon ht-40" alt="logo"></a><h1 class="main-logo1 ml-1 mr-0 my-auto tx-28">Va<span>le</span>x</h1></div>
 										<div class="card-sigin">
 											<div class="main-signup-header">
-												<h2>Welcome back!</h2>
+												<h2>{{trans('Dashboard/login_trans.Welcom_back')}}</h2>
+												@if ($errors->any())
+                                                  <div class="alert alert-danger">
+                                                    <ul>
+                                                         @foreach ($errors->all() as $error)
+                                                               <li>{{ $error }}</li>
+                                                         @endforeach
+                                                     </ul>
+                                                   </div>
+                                                @endif
+
 
 												<div class="form-group">
-													<label for="exampleFormControlSelect1">Example select</label>
+													<label for="exampleFormControlSelect1">{{trans('Dashboard/login_trans.Select_Enter')}}</label>
 													<select class="form-control" id="sectionChooser">
-													  <option>إختار من القائمة</option>
-													  <option value="admin">الدخول كأدمن</option>
-													  <option value="user">الدخول كمريض</option>
+                                                      <option> {{trans('Dashboard/login_trans.index')}} </option>													  
+                                                      <option value="admin"> {{trans('Dashboard/login_trans.admin')}} </option>
+													  <option value="user">{{trans('Dashboard/login_trans.user')}}</option>
 													</select>
 												  </div>
 												  {{-- Form user --}}
                                                 <div class="loginform" id="user">
-												<h5 class="font-weight-semibold mb-4">الدخول كمستخدم</h5>
+												<h5 class="font-weight-semibold mb-4">{{trans('Dashboard/login_trans.user')}}</h5>
 												<form method="POST" action="{{ route('login.user') }}">
 													@csrf
 													<div class="form-group">
@@ -72,7 +82,7 @@
 
 										   {{-- Form Admin --}}
 										  <div class="loginform" id="admin">
-											<h5 class="font-weight-semibold mb-4">الدخول كأدمن</h5>
+											<h5 class="font-weight-semibold mb-4">{{trans('Dashboard/login_trans.admin')}}</h5>
 											<form method="POST" action="{{ route('login.admin') }}">
 												@csrf
 												<div class="form-group">
