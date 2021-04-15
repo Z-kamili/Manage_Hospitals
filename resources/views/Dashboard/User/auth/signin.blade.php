@@ -47,7 +47,7 @@
 												<div class="form-group">
 													<label for="exampleFormControlSelect1">{{trans('Dashboard/login_trans.Select_Enter')}}</label>
 													<select class="form-control" id="sectionChooser">
-                                                      <option> {{trans('Dashboard/login_trans.index')}} </option>													  
+                                                      <option> {{trans('Dashboard/login_trans.Select_Enter')}} </option>													  
                                                       <option value="admin"> {{trans('Dashboard/login_trans.admin')}} </option>
 													  <option value="user">{{trans('Dashboard/login_trans.user')}}</option>
 													</select>
