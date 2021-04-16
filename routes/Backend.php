@@ -55,6 +55,15 @@ Route::group(
 
         //############################ end sections route ################################################
 
+        //############################ Doctors route ####################################################
+        
+           Route::resource('Doctors',App\Http\Controllers\Dashboard\DoctorController::class);
+
+        //############################ end Doctors route ################################################
+
+
+
+
 
 
         
