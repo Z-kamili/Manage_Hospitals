@@ -11,14 +11,14 @@ class SectionRepository implements SectionRepositoryInterface
       public function index()
      {
 
-        $sections = ModelsSection::all();
+        $sections = Section::all();
         return view('Dashboard.Sections.index',compact('sections'));
 
      }
        public function store($request)
        {
                
-        ModelsSection::create([
+        Section::create([
             'name' => $request->input('name'),
         ]);
 
@@ -32,7 +32,7 @@ class SectionRepository implements SectionRepositoryInterface
        public function update($request)
        {
         
-        $section = ModelsSection::findOrFail($request->id);
+        $section = Section::findOrFail($request->id);
         $section->update([
 
             'name' => $request->input('name'),
@@ -45,7 +45,7 @@ class SectionRepository implements SectionRepositoryInterface
 
        public function destroy($request){
 
-        ModelsSection::findOrFail($request->id)->delete();
+        Section::findOrFail($request->id)->delete();
         session()->flash('delete');
         return redirect()->route('Sections.index');
 
