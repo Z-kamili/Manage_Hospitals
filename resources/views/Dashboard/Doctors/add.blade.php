@@ -5,7 +5,7 @@
     <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
 
 @section('title')
-    {{trans('doctors.add_doctor')}}
+    {{trans('Dashboard/doctors.add_doctor')}}
 @stop
 @endsection
 @section('page-header')
@@ -13,9 +13,9 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto"> {{trans('main-sidebar_trans.doctors')}}</h4><span
+                <h4 class="content-title mb-0 my-auto"> {{trans('Dashboard/main-sidebar_trans.doctors')}}</h4><span
                     class="text-muted mt-1 tx-13 mr-2 mb-0">/
-               {{trans('doctors.add_doctor')}}</span>
+               {{trans('Dashboard/doctors.add_doctor')}}</span>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{trans('doctors.name')}}</label>
+                                        {{trans('Dashboard/doctors.name')}}</label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
                                     <input class="form-control" name="name" type="text">
@@ -47,7 +47,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{trans('doctors.email')}}</label>
+                                        {{trans('Dashboard/doctors.email')}}</label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
                                     <input class="form-control" name="email" type="email">
@@ -57,7 +57,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{ trans('doctors.password') }}</label>
+                                        {{ trans('Dashboard/doctors.password') }}</label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
                                     <input class="form-control" name="password" type="password">
@@ -67,7 +67,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{ trans('doctors.phone') }}</label>
+                                        {{ trans('Dashboard/doctors.phone') }}</label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
                                     <input class="form-control" name="phone" type="tel">
@@ -78,7 +78,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{trans('doctors.section')}}</label>
+                                        {{trans('Dashboard/doctors.section')}}</label>
                                 </div>
 
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
@@ -95,7 +95,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{trans('doctors.appointments')}}</label>
+                                        {{trans('Dashboard/doctors.appointments')}}</label>
                                 </div>
 
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
@@ -117,7 +117,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{trans('doctors.price')}}</label>
+                                        {{trans('Dashboard/doctors.price')}}</label>
                                 </div>
 
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
@@ -131,7 +131,7 @@
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">
-                                        {{ trans('Doctors.doctor_photo') }}</label>
+                                        {{ trans('Dashboard/Doctors.doctor_photo') }}</label>
                                 </div>
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
                                     <input type="file" accept="image/*" name="photo" onchange="loadFile(event)">
@@ -142,7 +142,7 @@
 
 
                             <button type="submit"
-                                    class="btn btn-main-primary pd-x-30 mg-r-5 mg-t-5">{{ trans('Doctors.submit') }}</button>
+                                    class="btn btn-main-primary pd-x-30 mg-r-5 mg-t-5">{{ trans('Dashboard/Doctors.submit') }}</button>
                         </div>
                     </form>
                 </div>

@@ -1,6 +1,6 @@
 @extends('Dashboard.layouts.master')
 @section('title')
-    {{trans('main-sidebar_trans.doctors')}}
+    {{trans('Dashboard/main-sidebar_trans.doctors')}}
 @stop
 @section('css')
     <link href="{{URL::asset('Dashboard/plugins/datatable/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
@@ -19,16 +19,16 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{trans('main-sidebar_trans.doctors')}}</h4>
+                <h4 class="content-title mb-0 my-auto">{{trans('Dashboard/main-sidebar_trans.doctors')}}</h4>
                 <span class="text-muted mt-1 tx-13 mr-2 mb-0">/
-                    {{trans('main-sidebar_trans.view_all')}}</span>
+                    {{trans('Dashboard/main-sidebar_trans.view_all')}}</span>
             </div>
         </div>
     </div>
     <!-- breadcrumb -->
 @endsection
 @section('content')
-    @include('Dashboard.messages_alert')
+@include('Dashboard.messages_alert')
     <!-- row opened -->
     <div class="row row-sm">
         <!--div-->
@@ -36,7 +36,7 @@
             <div class="card mg-b-20">
                 <div class="card-header pb-0">
                     <div class="d-flex justify-content-between">
-                        <a href="{{route('Doctors.create')}}" class="btn btn-primary" role="button" aria-pressed="true">{{trans('doctors.add_doctor')}}</a>
+                        <a href="{{route('Doctors.create')}}" class="btn btn-primary" role="button" aria-pressed="true">{{trans('Dashboard/doctors.add_doctor')}}</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -45,15 +45,15 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th >{{trans('doctors.name')}}</th>
-                                <th >{{trans('doctors.email')}}</th>
-                                <th>{{trans('doctors.section')}}</th>
-                                <th >{{trans('doctors.phone')}}</th>
-                                <th >{{trans('doctors.appointments')}}</th>
-                                <th>{{trans('doctors.price')}}</th>
-                                <th >{{trans('doctors.Status')}}</th>
-                                <th>{{trans('doctors.created_at')}}</th>
-                                <th>{{trans('doctors.Processes')}}</th>
+                                <th>{{trans('Dashboard/doctors.name')}}</th>
+                                <th>{{trans('Dashboard/doctors.email')}}</th>
+                                <th>{{trans('Dashboard/doctors.section')}}</th>
+                                <th>{{trans('Dashboard/doctors.phone')}}</th>
+                                <th>{{trans('Dashboard/doctors.appointments')}}</th>
+                                <th>{{trans('Dashboard/doctors.price')}}</th>
+                                <th>{{trans('Dashboard/doctors.Status')}}</th>
+                                <th>{{trans('Dashboard/doctors.created_at')}}</th>
+                                <th>{{trans('Dashboard/doctors.Processes')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -67,8 +67,9 @@
                                   <td>{{ $doctor->appointments}}</td>
                                   <td>{{ $doctor->price}}</td>
                                   <td>
-                                      <div class="dot-label bg-{{$doctor->status == 1 ? 'success':'danger'}} ml-1"></div>
-                                      {{$doctor->status == 1 ? trans('doctors.Enabled'):trans('doctors.Not_enabled')}}
+                                      <div style="margin-left: 40px" class="dot-label bg-{{$doctor->status == 1 ? 'success':'danger'}} ml-1"></div>
+                                      <div></div>
+                                      {{$doctor->status == 1 ? trans('Dashboard/doctors.Enabled'):trans('Dashboard/doctors.Not_enabled')}}
                                   </td>
 
                                   <td>{{ $doctor->created_at->diffForHumans() }}</td>
