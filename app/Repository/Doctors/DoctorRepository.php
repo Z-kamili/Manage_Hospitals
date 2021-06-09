@@ -5,6 +5,7 @@ use App\Interfaces\Doctors\DoctorRepositoryInterface;
 use App\Models\Doctor;
 use App\Models\Image;
 use App\Models\Section;
+use App\Models\Appointment;
 use App\Traits\UploadTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -23,7 +24,8 @@ class DoctorRepository implements DoctorRepositoryInterface
     public function create()
     {
         $sections = Section::all();
-        return view('Dashboard.Doctors.add',compact('sections'));
+        $appointments = Appointment::all();
+        return view('Dashboard.Doctors.add',compact('sections','appointments'));
     }
 
 
@@ -79,9 +81,29 @@ class DoctorRepository implements DoctorRepositoryInterface
 
     public function destroy($request)
     {
-        Section::findOrFail($request->id)->delete();
-        session()->flash('delete');
-        return redirect()->route('Sections.index');
+       
+        if($request->page_id==1){
+
+            if($request->filename){
+     
+              $this->Delete_attachment('upload_image','doctors/'.$request->filename,$request->id,$request->filename);
+            }
+               Doctor::destroy($request->id);
+               session()->flash('delete');
+               return redirect()->route('Doctors.index');
+           }
+     
+     
+           //---------------------------------------------------------------
+     
+           else{
+     
+     //
+     
+           }
+     
+     
+         
     }
 
 

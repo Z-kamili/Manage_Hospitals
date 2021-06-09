@@ -14,14 +14,13 @@ class CreateSectionTranslationsTable extends Migration
     public function up()
     {
         Schema::create('section_translations', function (Blueprint $table) {
-            $table->id();
-            $table->string('locale')->index();
-
-            
-       // Foreign key to the main model
-       $table->unsignedBigInteger('section_id');
-       $table->unique(['section_id', 'locale']);
-       $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
+        $table->id();
+        $table->string('locale')->index();
+        // Foreign key to the main model
+        $table->unsignedBigInteger('section_id');
+        $table->longText('description');
+        $table->unique(['section_id', 'locale']);
+        $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
        // Actual fields you want to translate
        $table->string('name');
         });

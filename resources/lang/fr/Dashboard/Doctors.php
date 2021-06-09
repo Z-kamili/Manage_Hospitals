@@ -18,5 +18,6 @@ return array (
   'submit' => 'nous faire parvenir',
   'Doctors'=>'Médecin',
   'View_all'=>'Voir tout',
-  'add_doctor'=>'Ajouter Médecin'
+  'add_doctor'=>'Ajouter Médecin',
+  'picture'=>'photo'
 );

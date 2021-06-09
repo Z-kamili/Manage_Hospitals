@@ -10,5 +10,6 @@ return [
    'submit'=>'Soumettre',
    'Close'=>'Fermer',
    'Warning'=>'Êtes-vous sûr du processus de suppression?',
+   'description'=>'Description'
 
 ];

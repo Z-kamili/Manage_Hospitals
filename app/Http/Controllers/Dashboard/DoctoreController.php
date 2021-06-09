@@ -92,8 +92,8 @@ class DoctoreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        return $this->Doctors->destroy($id);
+        return $this->Doctors->destroy($request);
     }
 }

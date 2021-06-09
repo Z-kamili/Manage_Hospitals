@@ -18,5 +18,6 @@ return array (
   'submit' => 'submit',
   'Doctors'=> 'Doctors',
   'View_all'=>'View All',
-  'add_doctor'=>'Add doctor'
+  'add_doctor'=>'Add doctor',
+  'picture'=>'picture'
 );

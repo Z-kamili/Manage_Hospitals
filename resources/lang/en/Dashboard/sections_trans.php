@@ -10,5 +10,6 @@ return [
    'submit'=>'Submit',
    'Close'=>'Close',
    'Warning'=>'Are Sure Of The Deleting Process ?',
+   'description'=>'Description'
 
 ];

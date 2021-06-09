@@ -9,7 +9,7 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
 class SectionTranslation extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name','description'];
     public $timestamps = false;
     use HasFactory;
 }

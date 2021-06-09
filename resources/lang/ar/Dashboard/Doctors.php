@@ -18,5 +18,6 @@ return array (
   'submit' => 'تاكيد',
   'Doctors'=> 'الأطباء',
   'View_all'=>'مشاهدة الكل',
-  'add_doctor'=>'إضافة طبيب'
+  'add_doctor'=>'إضافة طبيب',
+  'picture'=>'صورة'
 );
