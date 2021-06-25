@@ -1,6 +1,7 @@
 <?php
 
 return array (
+  'Choose' => 'اختار من القائمة',
   'Enabled' => 'مفعل',
   'Not_enabled' => 'غير مفعل',
   'Processes' => 'العمليات',
@@ -14,10 +15,14 @@ return array (
   'password' => 'كلمة المرور',
   'phone' => 'رقم الهاتف',
   'price' => 'سعر الكشف',
+  'delete_select' => 'حذف مجموعة اطباء',
   'section' => 'القسم',
   'submit' => 'تاكيد',
   'Doctors'=> 'الأطباء',
   'View_all'=>'مشاهدة الكل',
   'add_doctor'=>'إضافة طبيب',
-  'picture'=>'صورة'
+  'picture'=>'صورة',
+  'update_password' => 'تغير كلمة المرور',
+  'confirm_password' => 'تاكيد كلمة المرور',
+  'new_password' => 'كلمة المرورالجديدة',
 );

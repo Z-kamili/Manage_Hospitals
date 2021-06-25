@@ -54,8 +54,8 @@
                                            @foreach($sections as $section)
                                                <tr>
                                                    <td>{{$loop->iteration}}</td>
-                                                   <td>{{$section->name}}</td>
-                                                    <td>{{\Str::limit($section->description,10)}}</td>
+                                                   <td><a href="{{route('Sections.show',$section->id)}}">{{$section->name}}</a> </td>
+                                                   <td>{{\Str::limit($section->description,10)}}</td>
                                                    <td>{{ $section->created_at->diffForHumans() }}</td>
                                                    <td>
                                                        <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$section->id}}"><i class="las la-pen"></i></a>

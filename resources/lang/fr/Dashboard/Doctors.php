@@ -1,6 +1,7 @@
 <?php
 
 return array (
+  'Choose' => 'Choisissez dans la liste',
   'Enabled' => 'Activée',
   'Not_enabled' => 'Pas activé',
   'Processes' => 'Processus',
@@ -16,8 +17,13 @@ return array (
   'price' => 'le prix',
   'section' => 'Section',
   'submit' => 'nous faire parvenir',
+  'delete_select' => 'Supprimer les médecins du groupe',  
   'Doctors'=>'Médecin',
   'View_all'=>'Voir tout',
   'add_doctor'=>'Ajouter Médecin',
-  'picture'=>'photo'
+  'picture'=>'photo',
+  'update_password' => 'Update Password',
+  'confirm_password' => 'Confirm Password',
+  'new_password' => 'New Password',
+
 );

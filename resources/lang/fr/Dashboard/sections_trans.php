@@ -10,6 +10,7 @@ return [
    'submit'=>'Soumettre',
    'Close'=>'Fermer',
    'Warning'=>'Êtes-vous sûr du processus de suppression?',
-   'description'=>'Description'
+   'description'=>'Description',
+   'section_doctors' => 'Section Médecins',
 
 ];

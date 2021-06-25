@@ -10,6 +10,7 @@ return [
    'submit'=>'Submit',
    'Close'=>'Close',
    'Warning'=>'Are Sure Of The Deleting Process ?',
+   'section_doctors' => 'doctors section',
    'description'=>'Description'
 
 ];

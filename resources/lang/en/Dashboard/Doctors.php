@@ -1,6 +1,7 @@
 <?php
 
 return array (
+  'Choose' => 'Choose from the list',
   'Enabled' => 'Enabled',
   'Not_enabled' => 'Not_enabled',
   'Processes' => 'Processes',
@@ -15,9 +16,13 @@ return array (
   'phone' => 'phone',
   'price' => 'price',
   'section' => 'Section',
+  'delete_select' => 'Delete Group Doctors',  
   'submit' => 'submit',
   'Doctors'=> 'Doctors',
   'View_all'=>'View All',
   'add_doctor'=>'Add doctor',
-  'picture'=>'picture'
+  'picture'=>'picture',
+  'update_password' => 'Update Password',
+  'confirm_password' => 'Confirm Password',
+  'new_password' => 'New Password',
 );

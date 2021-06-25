@@ -33,7 +33,6 @@
                     <form action="{{ route('Doctors.store') }}" method="post" autocomplete="off" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="pd-30 pd-sm-40 bg-gray-200">
-
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-1">
                                     <label for="exampleInputEmail1">

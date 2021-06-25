@@ -11,6 +11,7 @@ return [
    'submit'=>'تاكيد',
    'Close'=>'اغلاق',
    'Warning'=>'هل انت متاكد من عملية الحذف ؟',
-   'description'=>'وصف'
+   'description'=>'وصف',
+   'section_doctors' => 'اطباء القسم',
 
 ];

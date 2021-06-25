@@ -58,6 +58,8 @@ Route::group(
         //############################# Doctors route ##########################################
 
         Route::resource('Doctors','App\Http\Controllers\Dashboard\DoctoreController');
+        Route::post('update_password', ['App\Http\Controllers\Dashboard\DoctoreController', 'update_password'])->name('update_password');
+        Route::post('update_status', ['App\Http\Controllers\Dashboard\DoctoreController', 'update_status'])->name('update_status');
 
        //############################# end Doctors route ######################################
 
