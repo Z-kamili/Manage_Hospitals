@@ -44,14 +44,17 @@ class DoctorRepository implements DoctorRepositoryInterface
             $doctors->price = $request->price;
             $doctors->status = 1;
             $doctors->save();
+
             // store trans
             $doctors->name = $request->name;
-            $doctors->appointments =implode(",",$request->appointments);
             $doctors->save();
+            // insert pivot tABLE
+            $doctors->doctorappointments()->attach($request->appointments);
 
 
             //Upload img
             $this->verifyAndStoreImage($request,'photo','doctors','upload_image',$doctors->id,'App\Models\Doctor');
+
             DB::commit();
             session()->flash('add');
             return redirect()->route('Doctors.create');

@@ -102,7 +102,7 @@
                                         <option selected value="" selected disabled>-- حدد المواعيد --</option>
                                         @foreach($appointments as $appointment)
 
-                                        <option value="{{$appointment->name}}">{{$appointment->name}}</option>
+                                        <option value="{{$appointment->id}}">{{$appointment->name}}</option>
 
                                         @endforeach
                                        
