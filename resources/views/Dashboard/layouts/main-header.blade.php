@@ -36,7 +36,14 @@
 											<strong
 												class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
 											
-										@else
+										@elseif(App::getLocale() == 'nds')
+												<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
+														src="{{URL::asset('Dashboard/img/flags/germany_flag.jpg')}}" alt="img"></span>
+												<strong
+													class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
+												
+											@else
+
 											
 										<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
 											src="{{URL::asset('Dashboard/img/flags/us_flag.jpg')}}" alt="img"></span>
@@ -53,6 +60,8 @@
 													<i class="flag-icon flag-icon-SA"></i>
 												@elseif($properties['native'] == "العربية")
 													{{-- <i class="flag-icon flag-icon-ma"></i> --}}
+												@elseif($properties['native'] == "Deutchland")
+													{{-- <i class="flag-icon flag-icon-du"></i> --}}
 												@endif
 												{{ $properties['native'] }}
 											</a>

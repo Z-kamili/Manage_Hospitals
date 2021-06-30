@@ -1,11 +1,15 @@
 <?php
 
-return [
-
-    'Main'=>'Logiciel de gestion hospitalière',
-    'index'=>'Domicile',
-    'sections'=>'Sections',
-    'doctors' => 'les médecins',
-    'sous-section'=>'Voir tout',
-
-];
+return array (
+  'Ambulance_calls' => 'Appels d ambulance',
+  'Insurance' => 'Assurance',
+  'Main' => 'Logiciel de gestion hospitalière',
+  'Services' => 'Services',
+  'Single_service' => 'Service unique',
+  'ambulance' => 'Ambulance',
+  'doctors' => 'Médecins',
+  'group_services' => 'Services de groupe',
+  'index' => 'Domicile',
+  'sections' => 'Sections',
+  'view_all' => 'Voir tout',
+);

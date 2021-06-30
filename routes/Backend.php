@@ -64,6 +64,11 @@ Route::group(
        //############################# end Doctors route ######################################
 
         
+        //############################# sections route ##########################################
+
+        Route::resource('Service', 'App\Http\Controllers\Dashboard\SingleServiceController');
+
+        //############################# end sections route ######################################
 
 
 
