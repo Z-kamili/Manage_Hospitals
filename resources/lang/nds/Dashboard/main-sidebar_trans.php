@@ -11,5 +11,7 @@ return array (
   'group_services' => 'Gruppendienste',
   'index' => 'Zuhause',
   'sections' => 'Abschnitt',
+  'sous-sections' => 'Abschnitte',
   'view_all' => 'Alle ansehen',
+  
 );
