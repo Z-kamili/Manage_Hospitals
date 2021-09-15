@@ -73,6 +73,12 @@ Route::group(
 
 
         });
+
+         //############################# GroupServices route ##########################################
+
+                Route::view('Add_GroupServices','livewire.GroupServices.include_create')->name('Add_GroupServices');
+
+         //############################# end GroupServices route ######################################
             
 
          require __DIR__.'/auth.php';
