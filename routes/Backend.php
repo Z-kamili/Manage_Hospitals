@@ -79,6 +79,12 @@ Route::group(
                 Route::view('Add_GroupServices','livewire.GroupServices.include_create')->name('Add_GroupServices');
 
          //############################# end GroupServices route ######################################
+
+        //############################# insurance route ##########################################
+
+        Route::resource('insurance', 'App\Http\Controllers\Dashboard\InsuranceController');
+
+        //############################# end insurance route ######################################
             
 
          require __DIR__.'/auth.php';
