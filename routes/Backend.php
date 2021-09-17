@@ -88,6 +88,7 @@ Route::group(
 
         Route::resource('Ambulance', 'App\Http\Controllers\Dashboard\AmbulanceController');
             
+        Route::resource('Patients', 'App\Http\Controllers\Dashboard\PatientController');
 
          require __DIR__.'/auth.php';
 
