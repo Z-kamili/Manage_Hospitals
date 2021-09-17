@@ -127,56 +127,36 @@
     <!-- main-content closed -->
 @endsection
 @section('js')
-    <!-- Internal Data tables -->
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/dataTables.dataTables.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/dataTables.responsive.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/responsive.dataTables.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/jquery.dataTables.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/dataTables.bootstrap4.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/dataTables.buttons.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/buttons.bootstrap4.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/jszip.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/pdfmake.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/vfs_fonts.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/buttons.html5.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/buttons.print.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/buttons.colVis.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/dataTables.responsive.min.js')}}"></script>
-    <script src="{{URL::asset('Dashboard/plugins/datatable/js/responsive.bootstrap4.min.js')}}"></script>
-    <!--Internal  Datatable js -->
-    <script src="{{URL::asset('Dashboard/js/table-data.js')}}"></script>
+   <!--Internal  Notify js -->
+   <script src="{{URL::asset('dashboard/plugins/notify/js/notifIt.js')}}"></script>
+   <script src="{{URL::asset('/plugins/notify/js/notifit-custom.js')}}"></script>
 
-    <!--Internal  Notify js -->
-    <script src="{{URL::asset('dashboard/plugins/notify/js/notifIt.js')}}"></script>
-    <script src="{{URL::asset('/plugins/notify/js/notifit-custom.js')}}"></script>
-
-    <script>
-        $(function() {
-            jQuery("[name=select_all]").click(function(source) {
-                checkboxes = jQuery("[name=delete_select]");
-                for(var i in checkboxes){
-                    checkboxes[i].checked = source.target.checked;
-                }
-            });
-        })
-    </script>
+   <script>
+       $(function() {
+           jQuery("[name=select_all]").click(function(source) {
+               checkboxes = jQuery("[name=delete_select]");
+               for(var i in checkboxes){
+                   checkboxes[i].checked = source.target.checked;
+               }
+           });
+       })
+   </script>
 
 
-    <script type="text/javascript">
-        $(function () {
-            $("#btn_delete_all").click(function () {
-                var selected = [];
-                $("#example input[name=delete_select]:checked").each(function () {
-                    selected.push(this.value);
-                });
-                if (selected.length > 0) {
-                    $('#delete_select').modal('show')
-                    $('input[id="delete_select_id"]').val(selected);
-                }
-            });
-        });
-    </script>
+   <script type="text/javascript">
+       $(function () {
+           $("#btn_delete_all").click(function () {
+               var selected = [];
+               $("#example input[name=delete_select]:checked").each(function () {
+                   selected.push(this.value);
+               });
+               if (selected.length > 0) {
+                   $('#delete_select').modal('show')
+                   $('input[id="delete_select_id"]').val(selected);
+               }
+           });
+       });
+   </script>
 
 
 

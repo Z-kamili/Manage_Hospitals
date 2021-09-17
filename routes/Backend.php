@@ -85,6 +85,8 @@ Route::group(
         Route::resource('insurance', 'App\Http\Controllers\Dashboard\InsuranceController');
 
         //############################# end insurance route ######################################
+
+        Route::resource('Ambulance', 'App\Http\Controllers\Dashboard\AmbulanceController');
             
 
          require __DIR__.'/auth.php';
