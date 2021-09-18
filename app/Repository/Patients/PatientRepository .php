@@ -1,25 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePatientRequest;
+namespace App\Repository\Patients;
 use App\Interfaces\Patients\PatientRepositoryInterface;
 use App\Models\Patient;
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
-class PatientController extends Controller
+class PatientRepository implements PatientRepositoryInterface
 {
-
-    // private $Patient;
-
-    // public function __construct(PatientRepositoryInterface $Patient)
-    // {
-    //     $this->Patient = $Patient;
-    // }
-
-    public function index()
+   public function index()
    {
        $Patients = Patient::all();
        return view('Dashboard.Patients.index',compact('Patients'));
@@ -30,7 +20,7 @@ class PatientController extends Controller
        return view('Dashboard.Patients.create');
    }
 
-   public function store(StorePatientRequest $request)
+   public function store($request)
    {
        try {
            $Patients = new Patient();
@@ -48,6 +38,7 @@ class PatientController extends Controller
            session()->flash('add');
            return redirect()->back();
        }
+
        catch (\Exception $e) {
            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
        }
@@ -58,7 +49,7 @@ class PatientController extends Controller
        $Patient = Patient::findorfail($id);
        return view('Dashboard.Patients.edit',compact('Patient'));
    }
-   public function update(StorePatientRequest $request)
+   public function update($request)
    {
        $Patient = Patient::findOrFail($request->id);
        $Patient->email = $request->email;
@@ -76,7 +67,7 @@ class PatientController extends Controller
        return redirect()->route('Patients.index');
    }
 
-   public function destroy(Request $request)
+   public function destroy($request)
    {
        Patient ::destroy($request->id);
        session()->flash('delete');

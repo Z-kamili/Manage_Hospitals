@@ -13,5 +13,8 @@ return array (
   'sections' => 'Abschnitt',
   'sous-sections' => 'Abschnitte',
   'view_all' => 'Alle ansehen',
+  'Patients' => 'Die Patienten',
+  'Add_patient'=> 'Patienten hinzufügen',
+  'List_patient'=> 'Patientenliste'
   
 );

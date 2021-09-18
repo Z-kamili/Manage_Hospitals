@@ -11,7 +11,7 @@ use App\Interfaces\Services\ServicerepositoryInterface;
 use App\Repository\Ambulances\AmbulanceRepository;
 use App\Repository\Doctors\DoctorRepository;
 use App\Repository\Insurances\insuranceRepository;
-use App\Repository\Insurances\PatientRepository;
+use App\Repository\Patients\PatientRepository;
 use App\Repository\Sections\SectionRepository;
 use App\Repository\Services\SingleServiceRepository;
 use Illuminate\Support\ServiceProvider;

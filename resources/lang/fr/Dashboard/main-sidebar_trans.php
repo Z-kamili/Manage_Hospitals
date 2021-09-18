@@ -13,4 +13,7 @@ return array (
   'sections' => 'Sections',
   'sous-sections' => 'Sections',
   'view_all' => 'Voir tout',
+  'Patients' => 'Les patients',
+  'Add_patient'=> 'Ajouter un patient',
+  'List_patient'=> 'Liste des patients'
 );
