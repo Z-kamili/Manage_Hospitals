@@ -15,5 +15,7 @@ return array (
   'view_all' => 'Voir tout',
   'Patients' => 'Les patients',
   'Add_patient'=> 'Ajouter un patient',
-  'List_patient'=> 'Liste des patients'
+  'List_patient'=> 'Liste des patients',
+  'Facture'=> 'Factures',
+  'First_Facture'=>'Facture_de_service_unique'
 );

@@ -15,5 +15,7 @@ return array (
   'view_all' => 'عرض الكل',
   'Patients' => 'المرضى',
   'Add_patient'=> 'إضافة مريض',
-  'List_patient'=> 'قائمة المرضى'
+  'List_patient'=> 'قائمة المرضى',
+  'Facture'=> 'الفواتير',
+  'First_Facture'=>'فاتورة خدمة مفردة'
 );

@@ -15,5 +15,7 @@ return array (
   'view_all' => 'view_all',
   'Patients' => 'Patients',
   'Add_patient'=> 'Add Patient',
-  'List_patient'=> 'List Patients'
+  'List_patient'=> 'List Patients',
+  'Facture'=> 'Invoices',
+  'First_Facture'=>'Single_service_invoice'
 );
