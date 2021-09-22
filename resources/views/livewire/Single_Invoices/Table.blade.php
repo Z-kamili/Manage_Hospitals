@@ -28,17 +28,20 @@
                 <td>{{ $single_invoice->Doctor->name }}</td>
                 <td>{{ $single_invoice->Section->name }}</td>
                 <td>{{ number_format($single_invoice->price, 2) }}</td>
-                <td>{{ number_format($single_invoice->discount_value, 2) }}</td>
+                <td>{{ number_format($single_invoice->discount_value)}}%</td>
                 <td>{{ $single_invoice->tax_rate }}%</td>
                 <td>{{ number_format($single_invoice->tax_value, 2) }}</td>
                 <td>{{ number_format($single_invoice->total_with_tax, 2) }}</td>
                 <td>{{ $single_invoice->type == 1 ? 'نقدي':'اجل' }}</td>
                 <td>
                     <button wire:click="edit({{ $single_invoice->id }})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteGroup{{$single_invoice->id}}"><i class="fa fa-trash"></i></button>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteGroup"  wire:click="delete({{ $single_invoice->id }})" ><i class="fa fa-trash"></i></button>
                 </td>
             </tr>
 
         @endforeach
     </table>
+
+    @include('livewire.Single_Invoices.delete')
+
 </div>

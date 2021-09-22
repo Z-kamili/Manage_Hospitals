@@ -21,7 +21,7 @@
                 <select wire:model="patient_id" class="form-control" required>
                     <option value=""  >-- اختار من القائمة --</option>
                     @foreach($Patients as $Patient)
-                        <option value="1">{{$Patient->name}}</option>
+                        <option value="{{$Patient->id}}">{{$Patient->name}}</option>
                     @endforeach
                 </select>
             </div>
@@ -72,7 +72,7 @@
                                     <th>اسم الخدمة</th>
                                     <th>سعر الخدمة</th>
                                     <th>قيمة الخصم</th>
-                                    <th>نسبة الضريبة</th>
+                                    <th>(%)نسبة الضريبة</th>
                                     <th>قيمة الضريبة</th>
                                     <th>الاجمالي مع الضريبة</th>
                                 </tr>
@@ -89,7 +89,7 @@
                                         </select>
                                     </td>
                                     <td><input wire:model="price" type="text" class="form-control" readonly></td>
-                                    <td><input wire:model="discount_value" type="text" class="form-control"></td>
+                                    <td><input wire:model="discount_value" type="text" class="form-control" value="{{$discount_value}}"></td>
                                     <th><input wire:model="tax_rate" type="text" class="form-control"></th>
                                     <td><input type="text" class="form-control" value="{{$tax_value}}" readonly ></td>
                                     <td><input type="text" class="form-control" readonly value="{{$subtotal + $tax_value }}"></td>
