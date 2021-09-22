@@ -96,6 +96,12 @@ Route::group(
 
                 //############################# end single_invoices route ######################################
 
+                //############################# Receipt route ##########################################
+
+                Route::resource('Receipt', ReceiptAccountController::class);
+
+                //############################# end Receipt route ######################################
+
          require __DIR__.'/auth.php';
 
 
