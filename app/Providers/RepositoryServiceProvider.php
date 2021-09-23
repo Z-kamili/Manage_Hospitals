@@ -4,12 +4,14 @@ namespace App\Providers;
 
 use App\Interfaces\Ambulances\AmbulanceRepositoryInterface;
 use App\Interfaces\Doctors\DoctorRepositoryInterface;
+use App\Interfaces\Finance\ReceiptRepositoryInterface;
 use App\Interfaces\Insurances\insuranceRepositoryInterface;
 use App\Interfaces\Patients\PatientRepositoryInterface;
 use App\Interfaces\Sections\SectionRepositoryInterface;
 use App\Interfaces\Services\ServicerepositoryInterface;
 use App\Repository\Ambulances\AmbulanceRepository;
 use App\Repository\Doctors\DoctorRepository;
+use App\Repository\Finance\ReceiptRepository;
 use App\Repository\Insurances\insuranceRepository;
 use App\Repository\Patients\PatientRepository;
 use App\Repository\Sections\SectionRepository;

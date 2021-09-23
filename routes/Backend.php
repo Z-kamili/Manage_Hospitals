@@ -98,7 +98,7 @@ Route::group(
 
                 //############################# Receipt route ##########################################
 
-                Route::resource('Receipt', ReceiptAccountController::class);
+                Route::resource('Receipt', 'App\Http\Controllers\Dashboard\ReceiptAccountController');
 
                 //############################# end Receipt route ######################################
 

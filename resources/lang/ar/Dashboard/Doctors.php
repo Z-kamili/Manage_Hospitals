@@ -25,4 +25,5 @@ return array (
   'update_password' => 'تغير كلمة المرور',
   'confirm_password' => 'تاكيد كلمة المرور',
   'new_password' => 'كلمة المرورالجديدة',
+  'submit'=> 'تأكيد'
 );

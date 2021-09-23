@@ -25,5 +25,6 @@ return array (
   'update_password' => 'Update Password',
   'confirm_password' => 'Confirm Password',
   'new_password' => 'New Password',
+  'submit'=> 'confirmer'
 
 );
