@@ -100,7 +100,13 @@ Route::group(
 
                 Route::resource('Receipt', 'App\Http\Controllers\Dashboard\ReceiptAccountController');
 
-                //############################# end Receipt route ######################################
+              //############################# end Receipt route ######################################
+
+              //############################# Payment route ##########################################
+
+                Route::resource('Payment','App\Http\Controllers\Dashboard\PaymentAccountController');
+
+             //############################# end Payment route ######################################
 
          require __DIR__.'/auth.php';
 

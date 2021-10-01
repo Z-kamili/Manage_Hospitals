@@ -2,5 +2,6 @@
 
 return array (
     'Acountes'=> 'les comptes',
-    'Catch_Receipt'=> 'Reçu_de_capture'
+    'Catch_Receipt'=> 'Reçu_de_capture',
+    'Cashing'=>'reçu',
 );
