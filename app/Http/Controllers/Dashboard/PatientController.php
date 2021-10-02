@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePatientRequest;
 use App\Interfaces\Patients\PatientRepositoryInterface;
 use App\Models\Patient;
+use App\Models\PatientAccount;
+use App\Models\ReceiptAccount;
+use App\Models\single_invoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -51,6 +54,19 @@ class PatientController extends Controller
        catch (\Exception $e) {
            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
        }
+   }
+
+   public function show($id)
+   {
+    $Patient = patient::findorfail($id);
+    $invoices = single_invoice::where('patient_id', $id)->get();
+    $receipt_accounts = ReceiptAccount::where('patient_id', $id)->get();
+    $Patient_accounts = PatientAccount::orWhereNotNull('single_invoice_id')
+        ->orWhereNotNull('receipt_id')
+        ->orWhereNotNull('Payment_id')
+        ->where('patient_id', $id)
+        ->get();
+    return view('Dashboard.Patients.show', compact('Patient', 'invoices', 'receipt_accounts', 'Patient_accounts'));
    }
 
    public function edit($id)
