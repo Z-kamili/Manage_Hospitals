@@ -73,6 +73,12 @@ class PaymentRepository implements PaymentRepositoryInterface
         return view('Dashboard.Payment.edit',compact('payment_accounts','Patients'));
     }
 
+    public function show($id)
+    {
+        $payment_account = PaymentAccount::findorfail($id);
+        return view('Dashboard.Payment.print',compact('payment_account'));
+    }
+
     public function update($request)
     {
         DB::beginTransaction();
