@@ -17,5 +17,6 @@ return array (
   'Add_patient'=> 'إضافة مريض',
   'List_patient'=> 'قائمة المرضى',
   'Facture'=> 'الفواتير',
-  'First_Facture'=>'فاتورة خدمة مفردة'
+  'First_Facture'=>'فاتورة خدمة مفردة',
+  'Group_Facture'=>'فاتورة مجموعة خدمات',
 );

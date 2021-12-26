@@ -18,10 +18,10 @@ class CreateDoctorsTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->string('phone');
             $table->decimal('price',8,2);
             $table->boolean('status')->default(1);
-            $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

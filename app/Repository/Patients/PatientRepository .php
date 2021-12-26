@@ -54,7 +54,6 @@ class PatientRepository implements PatientRepositoryInterface
            session()->flash('add');
            return redirect()->back();
        }
-
        catch (\Exception $e) {
            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
        }
