@@ -8,5 +8,7 @@ return [
     'user'=>'log in as a patient',
     'admin'=>'log in as a admin',
     'failed' => 'These credentials do not match our records.',
+    'Doctor'=> 'log in as Doctor',
+    
 
 ];
