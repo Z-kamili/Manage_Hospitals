@@ -34,7 +34,7 @@
 				<!-- /breadcrumb -->
 @endsection
 @section('content')
-				<!-- row -->
+		<!-- row -->
 				<div class="row row-sm">
 					<div class="col-xl-3 col-lg-6 col-md-6 col-xm-12">
 						<div class="card overflow-hidden sales-card bg-primary-gradient">
@@ -50,7 +50,7 @@
 										</div>
 										<span class="float-right my-auto mr-auto">
 											<i class="fas fa-arrow-circle-up text-white"></i>
-											<span class="text-white op-7"> +427</span>
+											<span class="text-white op-7">+427</span>
 										</span>
 									</div>
 								</div>
