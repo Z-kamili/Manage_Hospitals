@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard_Doctor\DiagnosticController;
+use App\Http\Controllers\Dashboard_Doctor\LaboratorieController;
 use App\Http\Controllers\Dashboard_Doctor\PatientDetailsController;
 use App\Http\Controllers\doctor\InvoiceController;
 use App\Http\Controllers\RayController;
@@ -69,6 +70,12 @@ Route::group(
             Route::get('patient_details/{id}', [PatientDetailsController::class,'index'])->name('patient_details');
 
             //############################# end rays route ######################################
+
+            //############################# Laboratories route ##########################################
+
+            Route::resource('Laboratories', LaboratorieController::class);
+
+            //############################# end Laboratories route ######################################
    
         });
     });
