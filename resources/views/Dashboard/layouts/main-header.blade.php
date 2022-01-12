@@ -50,7 +50,7 @@
 										
 										@endif
 										<div class="my-auto">
-										</div>
+								</div>
 									</a>
 									<div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow" x-placement="bottom-end">
 										@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -284,9 +284,8 @@
 										@csrf
 										<a class="dropdown-item" href="route('logout.user')"
 										onclick="event.preventDefault();
-													this.closest('form').submit();"><i class="bx bx-log-out"></i> Sign Out</a>
+													this.closest('form').submit();"><i class="bx bx-log-out"></i>{{trans('Dashboard/Deconnexion.deconnexion')}}</a>
 									</form>
-									{{-- <a class="dropdown-item" href="{{ url('/' . $page='page-signin') }}"><i class="bx bx-log-out"></i> Sign Out</a> --}}
 								</div>
 							</div>
 							<div class="dropdown main-header-message right-toggle">

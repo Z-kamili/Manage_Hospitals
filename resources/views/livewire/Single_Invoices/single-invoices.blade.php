@@ -23,20 +23,18 @@
         @csrf
         <div class="row">
             <div class="col">
-                <label>اسم المريض</label>
+                <label>{{trans('Dashboard/Facture.patient_name')}}</label>
                 <select wire:model="patient_id" class="form-control" required>
-                    <option value=""  >-- اختار من القائمة --</option>
+                    <option value=""  >-- {{trans('Dashboard/Facture.choice')}} --</option>
                     @foreach($Patients as $Patient)
                         <option value="{{$Patient->id}}">{{$Patient->name}}</option>
                     @endforeach
                 </select>
             </div>
-
-
             <div class="col">
-                <label>اسم الدكتور</label>
+                <label>{{trans('Dashboard/Facture.doctor')}}</label>
                 <select wire:model="doctor_id"  wire:change="get_section" class="form-control"  id="exampleFormControlSelect1" required>
-                    <option value="" >-- اختار من القائمة --</option>
+                    <option value="" >-- {{trans('Dashboard/Facture.choice')}} --</option>
                     @foreach($Doctors as $Doctor)
                         <option value="{{$Doctor->id}}">{{$Doctor->name}}</option>
                     @endforeach
@@ -45,14 +43,14 @@
 
 
             <div class="col">
-                <label>القسم</label>
+                <label>{{trans('Dashboard/Facture.class')}}</label>
                 <input wire:model="section_id" type="text" class="form-control" readonly >
             </div>
 
             <div class="col">
-                <label>نوع الفاتورة</label>
+                <label>{{trans('Dashboard/Facture.type')}}</label>
                 <select wire:model="type" class="form-control" {{$updateMode == true ? 'disabled':''}}>
-                    <option value="" >-- اختار من القائمة --</option>
+                    <option value="" >-- {{trans('Dashboard/Facture.choice')}} --</option>
                     <option value="1">نقدي</option>
                     <option value="2">اجل</option>
                 </select>
@@ -75,12 +73,12 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>اسم الخدمة</th>
-                                    <th>سعر الخدمة</th>
-                                    <th>قيمة الخصم</th>
-                                    <th>(%)نسبة الضريبة</th>
-                                    <th>قيمة الضريبة</th>
-                                    <th>الاجمالي مع الضريبة</th>
+                                    <th>{{trans('Dashboard/Facture.name')}}</th>
+                                    <th>{{trans('Dashboard/Facture.price')}}</th>
+                                    <th>{{trans('Dashboard/Facture.remise_valeur')}}</th>
+                                    <th>{{trans('Dashboard/Facture.taxe')}}</th>
+                                    <th>{{trans('Dashboard/Facture.value_taxe')}}</th>
+                                    <th>{{trans('Dashboard/Facture.input')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -88,7 +86,7 @@
                                     <th scope="row">1</th>
                                     <td>
                                         <select wire:model="Service_id" class="form-control" wire:change="get_price" id="exampleFormControlSelect1">
-                                            <option value="">-- اختار الخدمة --</option>
+                                            <option value="">-- {{trans('Dashboard/Facture.choice')}} --</option>
                                             @foreach($Services as $Service)
                                                 <option value="{{$Service->id}}">{{$Service->name}}</option>
                                             @endforeach
@@ -107,8 +105,7 @@
                 </div><!-- bd -->
             </div>
         </div>
-
-        <input class="btn btn-outline-success" type="submit" value="تاكيد البيانات">
+        <input class="btn btn-outline-success" type="submit" value="{{trans('Dashboard/Facture.save')}}">
     </form>
 
     @endif

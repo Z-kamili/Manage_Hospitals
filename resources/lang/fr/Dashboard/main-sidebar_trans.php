@@ -17,5 +17,8 @@ return array (
   'Add_patient'=> 'Ajouter un patient',
   'List_patient'=> 'Liste des patients',
   'Facture'=> 'Factures',
-  'First_Facture'=>'Facture_de_service_unique'
+  'First_Facture'=>'Facture_de_service_unique',
+  'Factures_service'=>'Facture de groupe de services',
+  'Group_Facture'=>'facture de groupe de services',
+
 );

@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\DoctorController;
+use App\Http\Controllers\Auth\RayEmployeeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
@@ -67,3 +68,11 @@ Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])-
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store'])->middleware('auth');
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth')->name('logout');
+
+//################################## Route RayEmployee ##############################################
+
+Route::post('/login/ray_employee', [RayEmployeeController::class, 'store'])->middleware('guest')->name('login.ray_employee');
+
+Route::post('/logout/ray_employee', [RayEmployeeController::class, 'destroy'])->middleware('auth:ray_employee')->name('logout.ray_employee');
+
+//#############################################################################################

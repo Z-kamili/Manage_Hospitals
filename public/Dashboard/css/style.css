@@ -136,6 +136,10 @@ address {
   font-style: normal;
   line-height: inherit; }
 
+.bg-main{
+  background-color: #ffffff !important;
+}
+
 ol, ul, dl {
   margin-top: 0;
   margin-bottom: 1rem; }

@@ -1,13 +1,13 @@
-<button class="btn btn-primary pull-right" wire:click="show_form_add" type="button">اضافة مجموعة خدمات </button><br><br>
+<button class="btn btn-primary pull-right" wire:click="show_form_add" type="button">{{trans('Dashboard/Services.Services')}}</button><br><br>
 <div class="table-responsive">
         <table class="table text-md-nowrap" id="example1" data-page-length="50"style="text-align: center">
         <thead>
             <tr>
                 <th>#</th>
-                <th>الاسم</th>
-                <th>اجمالي العرض شامل الضريبة</th>
-                <th>الملاحظات</th>
-                <th>العمليات</th>
+                <th>{{trans('Dashboard/Services.name')}}</th>
+                <th>{{trans('Dashboard/Services.price_input')}}</th>
+                <th>{{trans('Dashboard/Services.description')}}</th>
+                <th>{{trans('Dashboard/Services.Process')}}</th>
             </tr>
         </thead>
         <tbody>

@@ -24979,7 +24979,7 @@ pre {
 
 .country-flag1 strong {
   color: #7282a9;
-  display: none;
+  /* display: none; */
 }
 
 @media (max-width: 767px) {
@@ -25014,9 +25014,6 @@ pre {
   .sidebar-mini .main-dashboard-header-right {
     -ms-flex-wrap: wrap !important;
         flex-wrap: wrap !important;
-  }
-  .country-flag1 {
-    display: none !important;
   }
   .main-header-message, .main-header-notification {
     margin: auto 0 !important;

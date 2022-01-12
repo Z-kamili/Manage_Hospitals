@@ -1,21 +1,21 @@
-<button class="btn btn-primary pull-right" wire:click="show_form_add" type="button">اضافة فاتورة جديدة </button><br><br>
+<button class="btn btn-primary pull-right" wire:click="show_form_add" type="button"> {{trans('Dashboard/Facture.Add_new')}} </button><br><br>
 <div class="table-responsive">
     <table class="table text-md-nowrap" id="example1" data-page-length="50"style="text-align: center">
         <thead>
         <tr>
             <th>#</th>
-            <th>اسم الخدمة</th>
-            <th>اسم المريض</th>
-            <th>تاريخ الفاتورة</th>
-            <th>اسم الدكتور</th>
-            <th>القسم</th>
-            <th>سعر الخدمة</th>
-            <th>قيمة الخصم</th>
-            <th>نسبة الضريبة</th>
-            <th>قيمة الضريبة</th>
-            <th>الاجمالي مع الضريبة</th>
-            <th>نوع الفاتورة</th>
-            <th>العمليات</th>
+            <th>{{trans('Dashboard/Facture.name')}}</th>
+            <th>{{trans('Dashboard/Facture.patient_name')}}</th>
+            <th>{{trans('Dashboard/Facture.Date_factures')}}</th>
+            <th>{{trans('Dashboard/Facture.doctor')}}</th>
+            <th>{{trans('Dashboard/Facture.class')}}</th>
+            <th>{{trans('Dashboard/Facture.price')}}</th>
+            <th>{{trans('Dashboard/Facture.remise_valeur')}}</th>
+            <th>{{trans('Dashboard/Facture.taxe')}}</th>
+            <th>{{trans('Dashboard/Facture.value_taxe')}}</th>
+            <th> {{trans('Dashboard/Facture.input')}} </th>
+            <th>{{trans('Dashboard/Facture.type')}}</th>
+            <th>{{trans('Dashboard/Facture.Process')}}</th>
         </tr>
         </thead>
         <tbody>

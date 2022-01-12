@@ -45,10 +45,10 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th> {{trans('Dashboard/Services.name')}}</th>
-                                <th> {{trans('Dashboard/Services.price')}}</th>
-                                <th> {{trans('Dashboard/doctors.Status')}}</th>
-                                <th> {{trans('Dashboard/Services.description')}}</th>
+                                <th>{{trans('Dashboard/Services.name')}}</th>
+                                <th>{{trans('Dashboard/Services.price')}}</th>
+                                <th>{{trans('Dashboard/doctors.Status')}}</th>
+                                <th>{{trans('Dashboard/Services.description')}}</th>
                                 <th>{{trans('Dashboard/sections_trans.created_at')}}</th>
                                 <th>{{trans('Dashboard/sections_trans.Processes')}}</th>
                             </tr>
@@ -64,8 +64,8 @@
                                             class="dot-label bg-{{$service->status == 1 ? 'success':'danger'}} ml-1"></div>
                                         {{$service->status == 1 ? trans('Dashboard/doctors.Enabled'):trans('Dashboard/doctors.Not_enabled')}}
                                     </td>
-                                    <td> {{ Str::limit($service->description, 50) }}</td>
-                                    <td>{{ $service->created_at->diffForHumans() }}</td>
+                                    <td> {{Str::limit($service->description, 50)}}</td>
+                                    <td>{{$service->created_at->diffForHumans()}}</td>
                                     <td>
                                         <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
                                            data-toggle="modal" href="#edit{{$service->id}}"><i

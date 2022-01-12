@@ -4,14 +4,14 @@
     <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
 @endsection
 @section('title')
-   تعديل بيانات مريض
+{{trans('Dashboard/main-sidebar_trans.Patients')}}
 @endsection
 @section('page-header')
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">المرضي</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/  تعديل بيانات مريض</span>
+            <h4 class="content-title mb-0 my-auto">{{trans('Dashboard/main-sidebar_trans.Patients')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"></span>
         </div>
     </div>
 </div>
@@ -29,19 +29,19 @@
                         @csrf
                     <div class="row">
                         <div class="col-3">
-                            <label>اسم المريض</label>
+                            <label>{{trans('Dashboard\Patient.name')}}</label>
                             <input type="text" name="name"  value="{{$Patient->name}}" class="form-control @error('name') is-invalid @enderror " required>
                             <input type="hidden" name="id" value="{{$Patient->id}}">
                         </div>
 
                         <div class="col">
-                            <label>البريد الالكتروني</label>
+                            <label>{{trans('Dashboard\Patient.email')}}</label>
                             <input type="email" name="email"  value="{{$Patient->email}}" class="form-control @error('email') is-invalid @enderror" required>
                         </div>
 
 
                         <div class="col">
-                            <label>تاريخ الميلاد</label>
+                            <label>{{trans('Dashboard\Patient.date_of_birth')}}</label>
                             <input class="form-control fc-datepicker" value="{{$Patient->Date_Birth}}" name="Date_Birth" type="text" required>
                         </div>
 
@@ -50,20 +50,20 @@
 
                     <div class="row">
                         <div class="col-3">
-                            <label>رقم الهاتف</label>
+                            <label>{{trans('Dashboard\Patient.phone_number')}}</label>
                             <input type="number" name="Phone"  value="{{$Patient->Phone}}" class="form-control @error('Phone') is-invalid @enderror" required>
                         </div>
 
                         <div class="col">
-                            <label>الجنس</label>
+                            <label>{{trans('Dashboard\Patient.sex')}}</label>
                             <select class="form-control" name="Gender" required>
-                                <option value="1" {{$Patient->Gender == 1 ? 'selected':''}}>ذكر</option>
-                                <option value="2" {{$Patient->Gender == 2 ? 'selected':''}}>انثي</option>
+                                <option value="1" {{$Patient->Gender == 1 ? 'selected':''}}>{{trans('Dashboard\Patient.male')}}</option>
+                                <option value="2" {{$Patient->Gender == 2 ? 'selected':''}}>{{trans('Dashboard\Patient.female')}}</option>
                             </select>
                         </div>
 
                         <div class="col">
-                            <label>فصلية الدم</label>
+                            <label>{{trans('Dashboard\Patient.phone_number')}}</label>
                             <select class="form-control" name="Blood_Group" required>
                                 <option value="O-"{{$Patient->Blood_Group == "O-" ? 'selected':''}} >O-</option>
                                 <option value="O+" {{$Patient->Blood_Group == "O+" ? 'selected':''}}>O+</option>
@@ -79,7 +79,7 @@
                     <br>
                     <div class="row">
                         <div class="col">
-                            <label>العنوان</label>
+                            <label>{{trans('Dashboard\Patient.Adress')}}</label>
                             <textarea rows="5" cols="10" class="form-control" name="Address">{{$Patient->Address}}</textarea>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
 
                     <div class="row">
                         <div class="col">
-                            <button class="btn btn-success">حفظ البيانات</button>
+                            <button class="btn btn-success">{{trans('Dashboard\Patient.Save')}}</button>
                         </div>
                     </div>
 

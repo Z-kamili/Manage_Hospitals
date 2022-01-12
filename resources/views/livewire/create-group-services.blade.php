@@ -12,12 +12,12 @@
    <form wire:submit.prevent="saveGroup" autocomplete="off">
     @csrf
     <div class="form-group">
-        <label>اسم المجموعة</label>
+        <label>{{trans('Dashboard/Services.name')}}</label>
         <input wire:model="name_group" type="text" name="name_group" class="form-control" required>
     </div>
 
     <div class="form-group">
-        <label>ملاحظات</label>
+        <label>{{trans('Dashboard/Services.description')}}</label>
         <textarea wire:model="notes" name="notes" class="form-control" rows="5"></textarea>
     </div>
 
@@ -25,7 +25,7 @@
         <div class="card-header">
             <div class="col-md-12">
                 <button class="btn btn-outline-primary"
-                        wire:click.prevent="addService">اضافة خدمة فرعية
+                        wire:click.prevent="addService">{{trans('Dashboard/Services.add_sousService')}}
                 </button>
             </div>
         </div>
@@ -36,9 +36,9 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr class="table-primary">
-                        <th>اسم الخدمة</th>
-                        <th width="200">العدد</th>
-                        <th width="200">العمليات</th>
+                        <th>{{trans('Dashboard/Services.name')}}</th>
+                        <th width="200">{{trans('Dashboard/Services.number')}}</th>
+                        <th width="200">{{trans('Dashboard/Services.Process')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -85,13 +85,12 @@
                                 @if($groupItem['is_saved'])
                                     <button class="btn btn-sm btn-primary"
                                             wire:click.prevent="editService({{$index}})">
-                                        تعديل
+                                    {{trans('Dashboard/Services.edit_Service')}}     
                                     </button>
                                 @elseif($groupItem['service_id'])
                                     <button class="btn btn-sm btn-success mr-1"
                                             wire:click.prevent="saveService({{$index}})">
-                                        تاكيد
-                                    </button>
+                                    {{trans('Dashboard/Services.edit_Service')}}                                      </button>
                                 @endif
                                 <button class="btn btn-sm btn-danger"
                                         wire:click.prevent="removeService({{$index}})">حذف
@@ -107,31 +106,31 @@
             <div class="col-lg-4 ml-auto text-right">
                 <table class="table pull-right">
                     <tr>
-                        <td style="color: red">الاجمالي</td>
+                        <td style="color: red">{{trans('Dashboard/Services.global')}}</td>
                         <td>{{ number_format($subtotal, 2) }}</td>
                     </tr>
 
                     <tr>
-                        <td style="color: red">قيمة الخصم</td>
+                        <td style="color: red">{{trans('Dashboard/Services.input_value')}}</td>
                         <td width="125">
                             <input type="number" name="discount_value" class="form-control w-75 d-inline" wire:model="discount_value">
                         </td>
                     </tr>
 
                     <tr>
-                        <td style="color: red">نسبة الضريبة</td>
+                        <td style="color: red">{{trans('Dashboard/Services.valeur_remise')}}</td>
                         <td>
                             <input type="number" name="taxes" class="form-control w-75 d-inline" min="0" max="100" wire:model="taxes"> %
                         </td>
                     </tr>
                     <tr>
-                        <td style="color: red">الاجمالي مع الضريبة</td>
+                        <td style="color: red">{{trans('Dashboard/Services.inputes_global')}}</td>
                         <td>{{ number_format($total, 2) }}</td>
                     </tr>
                 </table>
             </div> <br/>
             <div>
-                <input class="btn btn-outline-success" type="submit" value="تاكيد البيانات">
+                <input class="btn btn-outline-success" type="submit" value="{{trans('Dashboard/Services.confirmation')}}">
             </div>
         </div>
     </div>

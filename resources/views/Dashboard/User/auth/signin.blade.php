@@ -2,22 +2,80 @@
 @section('css')
 
 <style>
-
     .loginform{display: none;}
-
 </style>
 
 <!-- Sidemenu-respoansive-tabs css -->
 <link href="{{URL::asset('Dashboard/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css')}}" rel="stylesheet">
 @endsection
 @section('content')
-		<div class="container-fluid">
+		<div class="container-fluid" style="background-color: #ffffff">
+			<ul class="nav" style="width: 90%;margin:auto" >
+				<li class="">
+					<div class="dropdown  nav-itemd-none d-md-flex">
+						<a href="#" class="d-flex  nav-item nav-link pl-0" data-toggle="dropdown"
+						   aria-expanded="false">
+							@if (App::getLocale() == 'ar')
+								<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
+										src="{{URL::asset('Dashboard/img/flags/mo_flag.jpg')}}" alt="img"></span>
+								<strong
+									class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
+							@elseif(App::getLocale() == 'fr')
+								<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
+										src="{{URL::asset('Dashboard/img/flags/french_flag.jpg')}}" alt="img"></span>
+								<strong
+									class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
+								
+							@elseif(App::getLocale() == 'nds')
+									<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
+											src="{{URL::asset('Dashboard/img/flags/germany_flag.jpg')}}" alt="img"></span>
+									<strong
+										class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
+									
+								@else
+
+								
+							<span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
+								src="{{URL::asset('Dashboard/img/flags/us_flag.jpg')}}" alt="img"></span>
+							
+							@endif
+							<div class="my-auto">
+					</div>
+					
+						</a>
+						<div class="dropdown-menu dropdown-menu-left dropdown-menu-arrow" x-placement="bottom-end">
+							@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+								<a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}"
+								   href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+									@if($properties['native'] == "Francais")
+										<i class="flag-icon flag-icon-SA"></i>
+									@elseif($properties['native'] == "العربية")
+										{{-- <i class="flag-icon flag-icon-ma"></i> --}}
+									@elseif($properties['native'] == "Deutchland")
+										{{-- <i class="flag-icon flag-icon-du"></i> --}}
+									@endif
+									{{ $properties['native'] }}
+								</a>
+							@endforeach
+						</div>
+					</div>
+				</li>
+			</ul>
 			<div class="row no-gutter">
 				<!-- The image half -->
-				<div class="col-md-6 col-lg-6 col-xl-7 d-none d-md-flex bg-primary-transparent">
+				<div class="col-md-6 col-lg-6 col-xl-7 d-none d-md-flex bg-main">
 					<div class="row wd-100p mx-auto text-center">
+						{{-- <div>
+							<select>
+								<option value="{{ LaravelLocalization::getCurrentLocaleName() }}">Arabe</option>
+								<option value="{{ LaravelLocalization::getCurrentLocaleName() }}">France</option>
+							</select>
+						</div> --}}
+						{{-- <select> --}}
+                 
+	{{-- </select> --}}
 						<div class="col-md-12 col-lg-12 col-xl-12 my-auto mx-auto wd-100p">
-							<img src="{{URL::asset('Dashboard/img/media/login.png')}}" class="my-auto ht-xl-80p wd-md-100p wd-xl-80p mx-auto" alt="logo">
+							<img src="{{URL::asset('Dashboard/img/media/main_doctor.png')}}" class="my-auto ht-xl-80p wd-md-100p wd-xl-80p mx-auto" alt="logo">
 						</div>
 					</div>
 				</div>
@@ -59,27 +117,15 @@
 												<form method="POST" action="{{ route('login.user') }}">
 													@csrf
 													<div class="form-group">
-														<label>Email</label> <input class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus>
+														<label>{{trans('Dashboard/login.email')}}</label> <input class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus>
 													</div>
 													<div class="form-group">
-														<label>Password</label> <input class="form-control" placeholder="Enter your password" type="password"
+														<label>{{trans('Dashboard/login.password')}}</label> <input class="form-control" placeholder="Enter your password" type="password"
 														name="password"
 														required autocomplete="current-password">
 													</div>
-													<button type="submit" class="btn btn-main-primary btn-block">Sign In</button>
-													<div class="row row-xs">
-														<div class="col-sm-6">
-															<button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
-														</div>
-														<div class="col-sm-6 mg-t-10 mg-sm-t-0">
-															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
-														</div>
-													</div>
+													<button type="submit" class="btn btn-main-primary btn-block">{{trans('Dashboard/login.sign_in')}}</button>
 												</form>
-												<div class="main-signin-footer mt-5">
-													<p><a href="">Forgot password?</a></p>
-													<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
-												</div>
 												</div>
 
 										   {{-- Form Admin --}}
@@ -88,54 +134,30 @@
 											<form method="POST" action="{{ route('login.admin') }}">
 												@csrf
 												<div class="form-group">
-													<label>Email</label> <input class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus>
+													<label>{{trans('Dashboard/Login.email')}}</label> <input class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus>
 												</div>
 												<div class="form-group">
-													<label>Password</label> <input class="form-control" placeholder="Enter your password" type="password"
+													<label>{{trans('Dashboard/Login.password')}}</label> <input class="form-control" placeholder="Enter your password" type="password"
 													name="password"
 													required autocomplete="current-password">
-												</div><button type="submit" class="btn btn-main-primary btn-block">Sign In</button>
-												<div class="row row-xs">
-													<div class="col-sm-6">
-														<button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
-													</div>
-													<div class="col-sm-6 mg-t-10 mg-sm-t-0">
-														<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
-													</div>
-												</div>
+												</div><button type="submit" class="btn btn-main-primary btn-block">{{trans('Dashboard/Login.sign_in')}} </button>
 											</form>
-											<div class="main-signin-footer mt-5">
-												<p><a href="">Forgot password?</a></p>
-												<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
-											</div>
 											</div>
 
 						                {{-- Form Doctor --}}
 		                                <div class="loginform" id="Doctor">
 								        	<h5 class="font-weight-semibold mb-4">{{trans('Dashboard/login_trans.Doctor')}}</h5>
-												<form method="POST" action="{{ route('login.doctor')}}">
+											   <form method="POST" action="{{ route('login.doctor')}}">
 													@csrf
 												  <div class="form-group">
-													<label>Email</label> <input class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus>
+													<label>{{trans('Dashboard/Login.email')}}</label> <input class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus>
 												  </div>
 										          <div class="form-group">
-											    	<label>Password</label> <input class="form-control" placeholder="Enter your password" type="password"
+											    	<label>{{trans('Dashboard/Login.password')}}</label> <input class="form-control" placeholder="Enter your password" type="password"
 																				name="password"
 																				required autocomplete="current-password">
-											        </div><button type="submit" class="btn btn-main-primary btn-block">Sign In</button>
-													<div class="row row-xs">
-													<div class="col-sm-6">
-													 <button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
-													</div>
-										           <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-														<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
-												    </div>
-											        </div>
-													</form>
-													<div class="main-signin-footer mt-5">
-														<p><a href="">Forgot password?</a></p>
-													    <p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
-													</div>
+											        </div><button type="submit" class="btn btn-main-primary btn-block">{{trans('Dashboard/Login.sign_in')}}</button>
+												</form>
 											</div>
 										</div>
 									</div>
@@ -149,19 +171,13 @@
 	</div>
 @endsection
 @section('js')
-
           <script>
-
 $('#sectionChooser').change(function(){
-
 var myID = $(this).val();
   $('.loginform').each(function(){
        myID === $(this).attr('id') ? $(this).show() : $(this).hide();
   });
 });
-
-
-
 		  </script>
 
 

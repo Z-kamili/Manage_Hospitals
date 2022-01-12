@@ -9,13 +9,6 @@ use Illuminate\Http\Request;
 
 class LaboratorieController extends Controller
 {
-    
-    // private $laboratorie;
-
-    // public function __construct(LaboratoriesRepositoryInterface $laboratorie)
-    // {
-    //     $this->laboratorie = $laboratorie;
-    // }
 
     public function store(Request $request)
     {

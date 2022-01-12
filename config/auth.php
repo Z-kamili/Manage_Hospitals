@@ -57,6 +57,11 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'ray_employee' => [
+            'driver' => 'session',
+            'provider' => 'ray_employees',
+        ],
     ],
 
     /*
@@ -86,6 +91,13 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
+
+
+        'ray_employees' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\RayEmployee::class,
+        ],
+
 
         'doctors' => [
             'driver' => 'eloquent',

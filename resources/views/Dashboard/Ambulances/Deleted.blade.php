@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">حذف بيانات سيارة اسعاف</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{trans('Dashboard/Ambulance.delete')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -16,7 +16,7 @@
                     <input type="hidden" name="id" value="{{$ambulance->id}}">
                     <div class="row">
                         <div class="col">
-                            <p class="h5 text-danger"> هل انت متاكد من حذف بيانات السيارة ؟ </p>
+                            <p class="h5 text-danger">{{trans('Dashboard/Ambulance.confirmation')}}</p>
                             <input type="text" class="form-control" readonly value="{{$ambulance->car_number}}">
                         </div>
                     </div>

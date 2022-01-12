@@ -3,7 +3,7 @@
 
 @endsection
 @section('title')
-    معلومات المريض
+{{trans('Dashboard\Global.information')}}
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
@@ -31,16 +31,15 @@
                                         <!-- Tabs -->
                                         <ul class="nav panel-tabs main-nav-line">
                                             <li class="nav-item"><a href="#tab1" class="nav-link active"
-                                                                    data-toggle="tab">معلومات المريض</a></li>
-                                            <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">الفواتير</a>
+                                                                    data-toggle="tab">{{trans('Dashboard\Global.information')}}</a></li>
+                                            <li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">{{trans('Dashboard\Global.factures')}}</a>
                                             </li>
-                                            <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">المدفوعات</a>
+                                            <li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">{{trans('Dashboard\Global.Paiements')}}</a>
                                             </li>
-                                            <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">كشف
-                                                    حساب</a></li>
-                                            <li class="nav-item"><a href="#tab5" class="nav-link" data-toggle="tab">الاشعه</a>
+                                            <li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">{{trans('Dashboard\Global.Relevé_de_compte')}}</a></li>
+                                            <li class="nav-item"><a href="#tab5" class="nav-link" data-toggle="tab">{{trans('Dashboard\Global.des_rayons')}}</a>
                                             </li>
-                                            <li class="nav-item"><a href="#tab6" class="nav-link" data-toggle="tab">المختبر</a>
+                                            <li class="nav-item"><a href="#tab6" class="nav-link" data-toggle="tab">{{trans('Dashboard\Global.laboratoire')}}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -58,12 +57,12 @@
                                                     <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>اسم المريض</th>
-                                                        <th>رقم الهاتف</th>
-                                                        <th>البريد الالكتورني</th>
-                                                        <th>تاريخ الميلاد</th>
-                                                        <th>النوع</th>
-                                                        <th>فصيلة الدم</th>
+                                                        <th>{{trans('Dashboard\Patient.name')}}</th>
+                                                        <th>{{trans('Dashboard\Patient.phone_number')}}</th>
+                                                        <th>{{trans('Dashboard\Patient.email')}}</th>
+                                                        <th>{{trans('Dashboard\Patient.date_of_birth')}}</th>
+                                                        <th>{{trans('Dashboard\Patient.sex')}}</th>
+                                                        <th>{{trans('Dashboard\Patient.blood_type')}}</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -73,18 +72,14 @@
                                                         <td>{{$Patient->Phone}}</td>
                                                         <td>{{$Patient->email}}</td>
                                                         <td>{{$Patient->Date_Birth}}</td>
-                                                        <td>{{$Patient->Gender == 1 ? '`ذكر' :  'انثي'}}</td>
+                                                        <td>{{$Patient->Gender == 1 ?  trans('Dashboard\Patient.male') : trans('Dashboard\Patient.female')  }}</td>
                                                         <td>{{$Patient->Blood_Group}}</td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
-
                                         {{-- End Show Information Patient --}}
-
-
-
                                         {{-- Start Invices Patient --}}
 
                                         <div class="tab-pane" id="tab2">
@@ -94,10 +89,10 @@
                                                     <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>اسم الخدمه</th>
-                                                        <th>تاريخ الفاتوره</th>
-                                                        <th>الاجمالي مع الضريبه</th>
-                                                        <th>نوع الفاتوره</th>
+                                                        <th>{{trans('Dashboard\Facture.name')}}</th>
+                                                        <th>{{trans('Dashboard\Facture.Date_factures')}}</th>
+                                                        <th>{{trans('Dashboard\Facture.Total')}}</th>
+                                                        <th>{{trans('Dashboard\Facture.Type')}}</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -113,7 +108,7 @@
                                                     @endforeach
                                                     <tr>
                                                         <th colspan="4" scope="row" class="alert alert-success">
-                                                            الاجمالي
+                                                            {{trans('Dashboard\Facture.global')}}
                                                         </th>
                                                         <td class="alert alert-primary">{{ number_format( $invoices->sum('total_with_tax') , 2)}}</td>
                                                     </tr>
@@ -134,9 +129,9 @@
                                                     <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>تاريخ الاضافه</th>
-                                                        <th>المبلغ</th>
-                                                        <th>البيان</th>
+                                                        <th>{{trans('Dashboard\Paiement.Déclaration')}}</th>
+                                                        <th>{{trans('Dashboard\Paiement.Quantite')}}</th>
+                                                        <th>{{trans('Dashboard\Paiement.Date')}}</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -150,7 +145,7 @@
                                                         <br>
                                                     @endforeach
                                                     <tr>
-                                                        <th scope="row" class="alert alert-success">الاجمالي
+                                                        <th scope="row" class="alert alert-success">{{trans('Dashboard\Paiement.global')}}
                                                         </th>
                                                         <td colspan="4"
                                                             class="alert alert-primary">{{ number_format( $receipt_accounts->sum('amount') , 2)}}</td>
@@ -170,11 +165,11 @@
                                                     <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>تاريخ الاضافه</th>
-                                                        <th>الوصف</th>
-                                                        <th>مدبن</th>
-                                                        <th>دائن</th>
-                                                        <th>الرصيد النهائي</th>
+                                                        <th>{{trans('Dashboard\compte.Date')}}</th>
+                                                        <th>{{trans('Dashboard\compte.Description')}}</th>
+                                                        <th>{{trans('Dashboard\compte.debit')}}</th>
+                                                        <th>{{trans('Dashboard\compte.credit')}}</th>
+                                                        <th>{{trans('Dashboard\compte.total')}}</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -202,12 +197,12 @@
                                                     @endforeach
                                                     <tr>
                                                         <th colspan="3" scope="row" class="alert alert-success">
-                                                            الاجمالي
+                                                            {{trans('Dashboard\compte.total')}}
                                                         </th>
                                                         <td class="alert alert-primary">{{ number_format( $Debit = $Patient_accounts->sum('Debit'), 2) }}</td>
                                                         <td class="alert alert-primary">{{ number_format( $credit = $Patient_accounts->sum('credit'), 2) }}</td>
                                                         <td class="alert alert-danger">
-                                                            <span class="text-danger"> {{$Debit - $credit}}   {{ $Debit-$credit > 0 ? 'مدين' :'دائن'}}</span>                                                        </td>
+                                                            <span class="text-danger"> {{$Debit - $credit}}   {{ $Debit-$credit > 0 ? trans('Dashboard\compte.debit') : trans('Dashboard\compte.credit') }}</span></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>

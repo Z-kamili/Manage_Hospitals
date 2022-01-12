@@ -22,9 +22,10 @@ return array (
   'View_all'=>'Voir tout',
   'add_doctor'=>'Ajouter Médecin',
   'picture'=>'photo',
-  'update_password' => 'Update Password',
-  'confirm_password' => 'Confirm Password',
+  'update_data'=>'editer les donnes',
+  'update_password' => 'editer le mot de passe',
+  'confirm_password' => 'Confirmer le mot de passe',
   'new_password' => 'New Password',
-  'submit'=> 'confirmer'
+  'submit'=> 'confirmer',
 
 );
