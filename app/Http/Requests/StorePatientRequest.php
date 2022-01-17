@@ -27,7 +27,7 @@ class StorePatientRequest extends FormRequest
             "name" => 'required',
             "email" => 'required|email|unique:patients,email,'.$this->id,
             "password" => 'required|sometimes',
-            "Phone" => 'required|numeric|unique:patients,Phone,'.$this->id,
+            "Phone" => 'required|numeric|min:10|unique:patients,Phone,'.$this->id,
             'Date_Birth' => 'required|date|date_format:Y-m-d',
             "Gender" => 'required|integer|in:1,2',
             "Blood_Group" => 'required',

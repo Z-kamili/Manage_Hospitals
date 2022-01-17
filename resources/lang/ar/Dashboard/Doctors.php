@@ -16,6 +16,7 @@ return array (
   'phone' => 'رقم الهاتف',
   'price' => 'سعر الكشف',
   'delete_select' => 'حذف مجموعة اطباء',
+  'delete' => 'حذف',
   'section' => 'القسم',
   'submit' => 'تاكيد',
   'Doctors'=> 'الأطباء',

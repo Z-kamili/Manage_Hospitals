@@ -11,7 +11,6 @@ trait UploadTrait{
     public function verifyAndStoreImage(Request $request, $inputname , $foldername , $disk, $imageable_id, $imageable_type){
 
         if( $request->hasFile( $inputname ) ) {
-
             // Check img
             if (!$request->file($inputname)->isValid()) {
                 flash('Invalid Image!')->error()->important();

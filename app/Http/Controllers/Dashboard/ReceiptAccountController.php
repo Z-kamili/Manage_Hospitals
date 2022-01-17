@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 
 class ReceiptAccountController extends Controller
 {
-
-
-
     protected $Receipt;
 
     public function __construct(ReceiptRepositoryInterface $Receipt)
@@ -22,10 +19,8 @@ class ReceiptAccountController extends Controller
     public function index()
     {
 
-        // $Debit = PatientAccount::where('patient_id',1)->sum('Debit');
-        // $credit = PatientAccount::where('patient_id',1)->sum('credit');
-        // return $Debit - $credit;
        return $this->Receipt->index();
+
     }
 
     public function create()

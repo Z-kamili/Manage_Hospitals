@@ -77,7 +77,7 @@ class CreateGroupServices extends Component
 
     public function saveService($index)
     {
-        $this->resetErrorBag();
+       // $this->resetErrorBag();
         $product = $this->allServices->find($this->GroupsItems[$index]['service_id']);
         $this->GroupsItems[$index]['service_name'] = $product->name;
         $this->GroupsItems[$index]['service_price'] = $product->price;
@@ -166,7 +166,8 @@ class CreateGroupServices extends Component
       
     }
 
-    public function show_form_add(){
+    public function show_form_add()
+    {
 
         $this->show_table = false;
 

@@ -68,14 +68,10 @@
                                     <td>{{$service->created_at->diffForHumans()}}</td>
                                     <td>
                                         <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                           data-toggle="modal" href="#edit{{$service->id}}"><i
-                                                class="las la-pen"></i></a>
-                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                           data-toggle="modal" href="#delete{{$service->id}}"><i
-                                                class="las la-trash"></i></a>
+                                           data-toggle="modal" href="#edit{{$service->id}}"><i  class="las la-pen"></i></a>
+                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#delete{{$service->id}}"><i class="las la-trash"></i></a>
                                     </td>
                                 </tr>
-
                                 @include('Dashboard.Services.Signle.edit')
                                 @include('Dashboard.Services.Signle.delete')
                             @endforeach

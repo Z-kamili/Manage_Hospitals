@@ -15,6 +15,7 @@ return array (
   'password' => 'le mot de passe',
   'phone' => 'téléphoner',
   'price' => 'le prix',
+  'delete'=>'supprimer',
   'section' => 'Section',
   'submit' => 'nous faire parvenir',
   'delete_select' => 'Supprimer les médecins du groupe',  

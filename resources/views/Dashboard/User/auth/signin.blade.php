@@ -109,6 +109,7 @@
                                                       <option value="admin"> {{trans('Dashboard/login_trans.admin')}} </option>
 													  <option value="user">{{trans('Dashboard/login_trans.user')}}</option>
 													  <option value="Doctor">{{trans('Dashboard/login_trans.Doctor')}}</option>
+													  <option value="ray_employee">{{trans('Dashboard/login_trans.Ray')}}</option>
 													</select>
 												  </div>
 												  {{-- Form user --}}
@@ -160,6 +161,29 @@
 												</form>
 											</div>
 										</div>
+						                {{-- Form Ray employee --}}
+		                                <div class="loginform" id="ray_employee">
+											<h2>الدخول موظف اشعة</h2>
+											<form method="POST" action="{{ route('login.ray_employee') }}">
+												@csrf
+											   <div class="form-group">
+												   <label>Email</label> <input  class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus>
+												   </div>
+												   <div class="form-group">
+													   <label>Password</label> <input class="form-control" placeholder="Enter your password"   type="password"name="password" required autocomplete="current-password" >
+													   </div><button type="submit" class="btn btn-main-primary btn-block">Sign In</button>
+													   <div class="row row-xs">
+														<div class="col-sm-6">
+														   <button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
+														</div>
+													   <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+														   <button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
+													   </div>
+													   </div>
+											</form>
+											</div>
+										</div>
+
 									</div>
 								</div>
 							</div>

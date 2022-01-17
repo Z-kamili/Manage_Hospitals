@@ -51,7 +51,7 @@
                                            wire:model="GroupsItems.{{$index}}.service_id"/>
                                     @if($groupItem['service_name'] && $groupItem['service_price'])
                                         {{ $groupItem['service_name'] }}
-                                        ({{ number_format($groupItem['service_price'], 2) }})
+                                        ({{number_format($groupItem['service_price'], 2)}})
                                     @endif
                                 @else
                                     <select name="GroupsItems[{{$index}}][service_id]"

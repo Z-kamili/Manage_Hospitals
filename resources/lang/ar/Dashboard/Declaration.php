@@ -1,5 +1,4 @@
 <?php
-
 return array (
     'declaration'=>'الكشوفات',
     'List_declaration'=>'قائمة الكشوفات',

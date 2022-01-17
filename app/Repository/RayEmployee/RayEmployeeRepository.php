@@ -43,7 +43,6 @@ class RayEmployeeRepository implements RayEmployeeRepositoryInterface
         else{
             $input = Arr::except($input, ['password']);
         }
-
         $ray_employee = RayEmployee::find($id);
         $ray_employee->update($input);
 
